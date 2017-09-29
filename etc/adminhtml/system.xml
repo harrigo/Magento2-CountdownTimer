@@ -18,17 +18,18 @@
 			</group>
 			<group id="delivery" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
 				<label>Delivery Countdown Configuration</label>
-				<field id="cutofftime" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+				<field id="cutofftime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Delivery Cut Off Time (hh:mm)</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
+					<comment>Time that delivery cuts off for that day.</comment>
                 </field>
-				<field id="deliverytime" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+				<field id="deliverytime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Delivery Time (Days)</label>
-                    <source_model>Magento\Config\Model\Config\Source\Locale\Weekdays</source_model>
+					<comment>Delivery Time in Days.</comment>
                 </field>
-				<field id="product" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Use Product Attribute</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				<field id="product" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product Attribute Code</label>
+					<comment>Set a product attribute for delivery days. Overides delivery time days if set for product.</comment>
                 </field>
             </group>
         </section>
