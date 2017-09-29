@@ -1,4 +1,4 @@
-<div>For delivery on <?php echo $block->getDeliveryDate(); ?> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> minutes!</div>
+<div class="message success countdown">For delivery on <?php echo $block->getDeliveryDate(); ?> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> minutes!</div>
 
 <script>
 function startTimer(duration, display) {

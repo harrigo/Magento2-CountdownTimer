@@ -5,19 +5,19 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 {
 	public function getDeliveryDate() {
 		$currenttime = $this->getCurrentTime();
-		$deliverydate = date('d-m-Y', strtotime(date('d-m-Y') . ' + 2 weekdays'));
-		if ($currenttime >= $this->getCufOffTime()) {
-			$deliverydate+= 86400;
-		}
+		$deliverydate = date('d/m/Y', strtotime(date('d-m-Y') . ' + 2 weekdays'));
+		//if ($currenttime >= $this->getCufOffTime()) {
+			//$deliverydate+= 86400;
+		//}
 		return $deliverydate;
 	}
 	
 	public function getCutOffTime() {
 		$currenttime = $this->getCurrentTime();
 		$cutofftime = strtotime(date('h:i:s A', strtotime(date('d-m-Y') . ' + 16 hours')));
-		if ($currenttime>$cutofftime) {
-			$cutofftime+= 86400;
-		}
+		//if ($currenttime>$cutofftime) {
+			//$cutofftime+= 86400;
+		//}
 		return $cutofftime;
 	}
 	
