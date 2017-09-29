@@ -20,7 +20,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-	var time = <?php echo $block->getTimeRemaining(); ?>,
+	var time = <?php echo $block->getTimeRemainingSeconds(); ?>,
 		display = document.querySelector('#time');
 	startTimer(time, display);
 };

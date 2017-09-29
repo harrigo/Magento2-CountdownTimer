@@ -3,7 +3,7 @@
 	  <css src="css/style.css" />
  </head> 
    <body>
-	 <referenceContainer name="content">
+	 <referenceContainer name="product.info.main">
 		  <block class="Harrigo\DeliveryCountdown\Block\DeliveryCountdown" template="Harrigo_DeliveryCountdown::countdowntimer.phtml" after="-" />
 	 </referenceContainer>  
  </body> 
