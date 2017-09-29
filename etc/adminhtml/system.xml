@@ -4,7 +4,7 @@
         <tab id="harrigo" translate="label" sortOrder="10">
             <label>Harrigo</label>
         </tab>
-        <section id="delivercountdown" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="deliverycountdown" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Delivery Countdown</label>
             <tab>harrigo</tab>
@@ -19,9 +19,9 @@
 			<group id="delivery" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
 				<label>Delivery Countdown Configuration</label>
 				<field id="cutofftime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Delivery Cut Off Time (hh:mm)</label>
+                    <label>Delivery Cut Off Time)</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Time that delivery cuts off for that day.</comment>
+					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="deliverytime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Delivery Time (Days)</label>
