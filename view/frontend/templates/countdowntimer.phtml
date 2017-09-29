@@ -1,21 +1,18 @@
-<div class="message success countdown">For delivery on <span id="date"><?php echo $block->getDeliveryDate(); ?></span> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> minutes!</div>
+<div class="message success countdown">For delivery on <span id="date"><?php echo $block->getDeliveryDate(); ?></span> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> seconds!</div>
 
 <script>
 function startTimer(duration, display) {
-	var timer = duration, hours, minutes, seconds;
+	var timer = duration;
 	setInterval(function () {
-		hours = parseInt(timer / 60, 10)
-		minutes = parseInt(timer / 60, 10)
-		seconds = parseInt(timer % 60, 10);
+		//hours = parseInt(timer / 60, 10)
+		//minutes = parseInt(timer / 60, 10)
+		//seconds = parseInt(timer % 60, 10);
 
-		minutes = minutes < 10 ? "0" + minutes : minutes;
-		seconds = seconds < 10 ? "0" + seconds : seconds;
-		
-		//var time = new Date(null);
-		//time.setSeconds(timer); // specify value for SECONDS here
-		//var result = date.toISOString().substr(11, 8);
-		
-		display.textContent = minutes + ":" + seconds;
+		//minutes = minutes < 10 ? "0" + minutes : minutes;
+		//seconds = seconds < 10 ? "0" + seconds : seconds;
+		time = new Date(timer * 1000).toISOString().substr(11, 8);
+		//alert(time);
+		display.textContent = time;
 		
 		if (--timer < 0) {
 			timer = 86400;

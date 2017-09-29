@@ -28,7 +28,7 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 	public function getCutOffTime() {
 		$cuttoffadmin = $this->scopeConfig->getValue('deliverycountdown/delivery/cutofftime', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		$currenttime = $this->getCurrentTime();
-		$cutofftime = strtotime(date('h:i:s A', strtotime(date('d-m-Y') . ' + ' . $cuttoffadmin . ' hours - 5 minutes')));
+		$cutofftime = strtotime(date('h:i:s A', strtotime(date('d-m-Y') . ' + ' . $cuttoffadmin . ' hours + 20 minutes')));
 		//if ($currenttime>$cutofftime) {
 			//$cutofftime+= 86400;
 		//}
