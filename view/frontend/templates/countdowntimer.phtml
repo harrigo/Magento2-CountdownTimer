@@ -1,4 +1,4 @@
-<div class="message success countdown">For delivery on <?php echo $block->getDeliveryDate(); ?> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> minutes!</div>
+<div class="message success countdown">For delivery on <span id="date"><?php echo $block->getDeliveryDate(); ?></span> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> minutes!</div>
 
 <script>
 function startTimer(duration, display) {
@@ -10,11 +10,23 @@ function startTimer(duration, display) {
 
 		minutes = minutes < 10 ? "0" + minutes : minutes;
 		seconds = seconds < 10 ? "0" + seconds : seconds;
-
+		
+		//var time = new Date(null);
+		//time.setSeconds(timer); // specify value for SECONDS here
+		//var result = date.toISOString().substr(11, 8);
+		
 		display.textContent = minutes + ":" + seconds;
-
+		
 		if (--timer < 0) {
 			timer = 86400;
+			//date = document.getElementById('date').innerHTML.substring(document.getElementById('date').innerHTML.indexOf("/") + 1);
+			//day = document.getElementById('date').innerHTML.substr(0, document.getElementById('date').innerHTML.indexOf('/'));
+			//day = parseInt(day)+1;
+			//if (day.length == 1) {
+				//day = 0 + day;
+			//}
+			//newdate = day + "/" + date;
+			//document.getElementById('date').innerHTML(newdate);
 		}
 	}, 1000);
 }
