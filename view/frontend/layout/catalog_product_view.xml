@@ -1,0 +1,12 @@
+   <?xml version="1.0"?>
+     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+       <head>
+          <css src="css/style.css" />
+          <script src="js/coutdowntimer.js"/>
+     </head> 
+       <body>
+         <referenceContainer name="product.info.main">
+              <block class="Harrigo\DeliveryCountdown\Block\CoutdownTimer" template="Harrigo_DeliveryCountdown::coutdowntimer.phtml" after="-" />
+         </referenceContainer>  
+     </body> 
+    </page>

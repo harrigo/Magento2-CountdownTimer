@@ -1,0 +1,27 @@
+<div>For delivery on <?php echo $block->getDeliveryDate(); ?> order within the next <span id="time"><?php echo $block->getTimeRemaining(); ?></span> minutes!</div>
+
+<script>
+function startTimer(duration, display) {
+	var timer = duration, hours, minutes, seconds;
+	setInterval(function () {
+		hours = parseInt(timer / 60, 10)
+		minutes = parseInt(timer / 60, 10)
+		seconds = parseInt(timer % 60, 10);
+
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		display.textContent = minutes + ":" + seconds;
+
+		if (--timer < 0) {
+			timer = 86400;
+		}
+	}, 1000);
+}
+
+window.onload = function () {
+	var time = <?php echo $block->getTimeRemaining(); ?>,
+		display = document.querySelector('#time');
+	startTimer(time, display);
+};
+</script>
