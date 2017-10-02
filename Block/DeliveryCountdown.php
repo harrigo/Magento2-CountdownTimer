@@ -16,7 +16,7 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
     }
 	
 	public function getDeliveryDate() {
-		$deliverydaysadmin = $this->scopeConfig->getValue('deliverycountdown/delivery/deliverytime', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+		$deliverydaysadmin = $this->scopeConfig->getValue('deliverycountdown/general/deliverytime', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		$currenttime = $this->getCurrentTime();
 		$deliverydate = date('d/m/Y', strtotime(date('d-m-Y') . ' + ' . $deliverydaysadmin . ' weekdays'));
 		//if ($currenttime >= $this->getCufOffTime()) {
@@ -26,7 +26,7 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 	}
 	
 	public function getCutOffTime() {
-		$cuttoffadmin = $this->scopeConfig->getValue('deliverycountdown/delivery/cutofftime', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+		$cuttoffadmin = $this->scopeConfig->getValue('deliverycountdown/delivery/cutofftimemon', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		$currenttime = $this->getCurrentTime();
 		$cutofftime = strtotime(date('h:i:s A', strtotime(date('d-m-Y') . ' + ' . $cuttoffadmin . ' hours - 201 minutes')));
 		//if ($currenttime>$cutofftime) {
@@ -50,10 +50,15 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 	}
 	
 	public function buildString() {
-		$string = $this->scopeConfig->getValue('deliverycountdown/delivery/string', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+		$string = $this->scopeConfig->getValue('deliverycountdown/general/string', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		$string = str_replace("{{delivery_date}}",'<span id="date">' . $this->getDeliveryDate() . "</span>",$string);
 		$string = str_replace("{{time_remaining}}",'<span id="time">' . $this->getTimeRemaining() . "</span>",$string);
 		return $string;
+	}
+	
+	public function excludeDays() {
+		//want to use https://www.gov.uk/bank-holidays.json to get bank holidays for uk/bank-holidays
+		//will create an array for other countries and slowly add api for large countries. USA etc.
 	}
 	
 } 
