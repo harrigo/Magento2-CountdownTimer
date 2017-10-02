@@ -28,7 +28,7 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 	public function getCutOffTime() {
 		$cuttoffadmin = $this->scopeConfig->getValue('deliverycountdown/delivery/cutofftimemon', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		$currenttime = $this->getCurrentTime();
-		$cutofftime = strtotime(date('h:i:s A', strtotime(date('d-m-Y') . ' + ' . $cuttoffadmin . ' hours - 201 minutes')));
+		$cutofftime = strtotime(date('h:i:s A', strtotime(date('d-m-Y') . ' + ' . $cuttoffadmin . ' hours - 0 minutes')));
 		//if ($currenttime>$cutofftime) {
 			//$cutofftime+= 86400;
 		//}
@@ -59,6 +59,13 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 	public function excludeDays() {
 		//want to use https://www.gov.uk/bank-holidays.json to get bank holidays for uk/bank-holidays
 		//will create an array for other countries and slowly add api for large countries. USA etc.
+		
 	}
 	
 } 
+
+// need to check if cutoff include excludedays.
+
+//issues need to get correct initial time left
+
+//need to check delivery date includes exclude days

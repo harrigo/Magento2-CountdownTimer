@@ -41,40 +41,34 @@
 			</group>
 			<group id="delivery" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
 				<label>Delivery Cut Off Times</label>
+				<comment>Hour that delivery cuts off for that day 24 hour. Leave Blank if delivery not dispatched on this day.</comment>
 				<field id="cutofftimemon" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Monday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="cutofftimetue" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Tuesday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="cutofftimewed" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Wednesday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="cutofftimethu" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Thursday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="cutofftimefri" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Friday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="cutofftimesat" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Saturday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 				<field id="cutofftimesun" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Sunday</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
-					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
 
             </group>
