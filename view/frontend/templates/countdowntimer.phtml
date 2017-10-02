@@ -3,26 +3,24 @@
 function startTimer(duration, display) {
 	var timer = duration;
 	setInterval(function () {
-		//hours = parseInt(timer / 60, 10)
-		//minutes = parseInt(timer / 60, 10)
-		//seconds = parseInt(timer % 60, 10);
-
-		//minutes = minutes < 10 ? "0" + minutes : minutes;
-		//seconds = seconds < 10 ? "0" + seconds : seconds;
 		time = new Date(timer * 1000).toISOString().substr(11, 8);
-		//alert(time);
 		display.textContent = time;
-		
 		if (--timer < 0) {
 			timer = 86400;
-			//date = document.getElementById('date').innerHTML.substring(document.getElementById('date').innerHTML.indexOf("/") + 1);
-			//day = document.getElementById('date').innerHTML.substr(0, document.getElementById('date').innerHTML.indexOf('/'));
-			//day = parseInt(day)+1;
-			//if (day.length == 1) {
-				//day = 0 + day;
-			//}
-			//newdate = day + "/" + date;
-			//document.getElementById('date').innerHTML(newdate);
+			var date = new Date(document.getElementById('date').innerHTML);
+			date.setDate(date.getDate() + 1);
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; //January is 0!
+			var yyyy = today.getFullYear();
+			if(dd<10){
+				dd='0'+dd;
+			} 
+			if(mm<10){
+				mm='0'+mm;
+			}
+			var date = dd+'/'+mm+'/'+yyyy;
+			
+			document.getElementById('date').innerHTML = date;
 		}
 	}, 1000);
 }
