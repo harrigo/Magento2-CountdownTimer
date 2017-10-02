@@ -9,25 +9,29 @@
             <label>Delivery Countdown</label>
             <tab>harrigo</tab>
             <resource>Harrigo_DeliveryCountdown::deliverycountdown_configuration</resource>
-            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
-                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Module Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 			</group>
-			<group id="delivery" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+			<group id="delivery" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
 				<label>Delivery Countdown Configuration</label>
-				<field id="cutofftime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+				<field id="cutofftime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Delivery Cut Off Time)</label>
                     <source_model>Magento\Config\Model\Config\Source\Date\Short</source_model>
 					<comment>Hour that delivery cuts off for that day 24 hour.</comment>
                 </field>
-				<field id="deliverytime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+				<field id="deliverytime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Delivery Time (Days)</label>
 					<comment>Delivery Time in Days.</comment>
                 </field>
-				<field id="product" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+				<field id="string" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delivery Text</label>
+					<comment>Set tex to be shown on frontend. Shortcodes: {{delivery_date}}, {{time_remaining}}. <br />e.g. For delivery on {{delivery_date}} order within the next {{time_remaining}} seconds!</comment>
+                </field>
+				<field id="product" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Product Attribute Code</label>
 					<comment>Set a product attribute for delivery days. Overides delivery time days if set for product.</comment>
                 </field>

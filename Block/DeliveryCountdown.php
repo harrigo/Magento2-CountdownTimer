@@ -49,4 +49,11 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 		return $interval = $this->getCutOffTime() - $this->getCurrentTime();
 	}
 	
+	public function buildString() {
+		$string = $this->scopeConfig->getValue('deliverycountdown/delivery/string', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+		$string = str_replace("{{delivery_date}}",'<span id="date">' . $this->getDeliveryDate() . "</span>",$string);
+		$string = str_replace("{{time_remaining}}",'<span id="time">' . $this->getTimeRemaining() . "</span>",$string);
+		return $string;
+	}
+	
 } 
