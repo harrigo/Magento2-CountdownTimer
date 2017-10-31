@@ -18,10 +18,15 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 	public function getDeliveryDate() {
 		$deliverydaysadmin = $this->scopeConfig->getValue('deliverycountdown/general/deliverytime', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		$currenttime = $this->getCurrentTime();
-		$deliverydate = date('d/m/Y', strtotime(date('d-m-Y') . ' + ' . $deliverydaysadmin . ' weekdays'));
+		$currentdate = date('d-m-Y');
+		$tempdeliverydate = date('d/m/Y', strtotime($currentdate . ' + ' . $deliverydaysadmin . ' weekdays'));
+		//need to check if cut offtime passed weather to include the current day.
 		//if ($currenttime >= $this->getCufOffTime()) {
 			//$deliverydate+= 86400;
 		//}
+		//need to check that the exclude days are here
+		$deliverydate = $tempdeliverydate + $this->excludeDays($currentdate, $deliverydate);
+		
 		return $deliverydate;
 	}
 	
@@ -56,10 +61,28 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 		return $string;
 	}
 	
-	public function excludeDays() {
+	private function excludeDays($start_date, $end_date) {
 		//want to use https://www.gov.uk/bank-holidays.json to get bank holidays for uk/bank-holidays
 		//will create an array for other countries and slowly add api for large countries. USA etc.
+		//for now i need to pull the array of manually set exclude days within admin.
+		$excludedays = $this->scopeConfig->getValue('deliverycountdown/delivery/excludedays', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		
+		foreach ($excludedays as $day) {
+		if($this->checkInRange($start_date, $end_date, $day)) {
+			$excludeddays++;
+		}
+		}
+		return $excludeddays;
+	}
+	
+	private function checkInRange(($start_date, $end_date, $day) {	
+  			// Convert to timestamp
+  			$start_ts = strtotime($start_date);
+  			$end_ts = strtotime($end_date);
+  			$day = strtotime($day);
+
+                        // Check that user date is between start & end
+                       return (($day >= $start_ts) && ($day <= $end_ts));
 	}
 	
 } 
