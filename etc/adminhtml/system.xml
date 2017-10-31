@@ -28,7 +28,7 @@
                     <label>Delivery Time (Days)</label>
 					<comment>Delivery Time in Days.</comment>
                 </field>
-				<field id="mapping" translate="label comment tooltip" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+				<field id="excludedays" translate="label comment tooltip" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Exclude Days</label>
                         <frontend_model>Harrigo\DeliveryCountdown\Block\Adminhtml\System\Config\Form\Field\excludeDays</frontend_model>
                         <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
