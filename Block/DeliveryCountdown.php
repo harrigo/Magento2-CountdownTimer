@@ -75,7 +75,7 @@ class DeliveryCountdown extends \Magento\Framework\View\Element\Template
 		return $excludeddays;
 	}
 	
-	private function checkInRange(($start_date, $end_date, $day) {	
+	private function checkInRange($start_date, $end_date, $day) {	
   			// Convert to timestamp
   			$start_ts = strtotime($start_date);
   			$end_ts = strtotime($end_date);
